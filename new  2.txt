@@ -1,0 +1,16 @@
+case "/find.js":
+			req.on("data",function(chunck){
+				findData += chunck;
+			});
+			req.on("end",function(){
+				findData = qs.parse(findData);
+				res.end();
+				mongoClient.connect(db_conn,function(err,db){
+					console.log("连接成功 可以查询");
+					findDatadb(db,function(db,result){
+						console.log(result);
+					})
+				})
+			
+			})
+			break;

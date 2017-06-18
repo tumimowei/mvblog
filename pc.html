@@ -1,0 +1,829 @@
+﻿
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>翡翠教育资源管理系统</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	
+	
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-store"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link href="/common/image/fc.ico" rel="shortcut icon" type="image/x-icon" /> 
+
+<script type="text/javascript" src="/common/js/jQuery-2.2.0.min.js"></script>
+<script type="text/javascript" src="/common/plugin/layer/laypage/laypage.js"></script>
+<link type="text/css" rel="stylesheet" href="/common/plugin/layer/laypage/skin/laypage.css" />
+<script type="text/javascript" src="/common/plugin/layer/page.js"></script>
+<script type="text/javascript" src="/common/plugin//layer/layer.js"></script>
+
+<!-- Bootstrap 3.3.5 -->
+<link rel="stylesheet" href="/common/plugin/bootstrap/bootstrap/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="/common/plugin/bootstrap/Font-Awesome-3.2.1/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="/common/plugin/bootstrap/ionicons/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="/common/plugin/bootstrap/dist/css/AdminLTE.min.css">
+<!-- iCheck -->
+<link rel="stylesheet" href="/common/plugin/bootstrap/plugins/iCheck/square/blue.css">
+<!-- select2 -->
+<link href="/common/plugin/bootstrap/plugins/select2/select2.min.css" rel="stylesheet"/>
+
+<!-- Bootstrap 3.3.5 -->
+<script src="/common/plugin/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="/common/plugin/bootstrap/plugins/iCheck/icheck.min.js"></script>
+<!-- DataTables -->
+<link rel="stylesheet" href="/common/plugin/bootstrap/plugins/datatables/dataTables.bootstrap.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="/common/plugin/bootstrap/dist/css/skins/_all-skins.min.css">
+
+<!-- DataTables -->
+<script src="/common/plugin/bootstrap/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/common/plugin/bootstrap/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="/common/plugin/bootstrap/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="/common/plugin/bootstrap/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="/common/plugin/bootstrap/dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/common/plugin/bootstrap/dist/js/demo.js"></script>
+<!-- select2 -->
+<script type="text/javascript" src="/common/plugin/bootstrap/plugins/select2/select2.full.min.js"></script>
+
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+	    
+    </script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<input type="hidden" class="pageFLag" id="pageFLag" value="module" />
+<div class="wrapper">
+  <!-- header start -->
+  
+<header class="main-header">
+   <!-- Logo -->
+   <a href="javascript:void(0);" class="logo">
+     <!-- mini logo for sidebar mini 50x50 pixels -->
+     <span class="logo-mini"><b>翡翠</b></span>
+     <!-- logo for regular state and mobile devices -->
+     <span class="logo-lg"><b>翡翠</b>资源管理系统</span>
+   </a>
+   <!-- Header Navbar: style can be found in header.less -->
+   <nav class="navbar navbar-static-top" role="navigation">
+     <!-- Sidebar toggle button-->
+     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+     </a>
+
+     <div class="navbar-custom-menu margin-r-15">
+       <ul class="nav navbar-nav">
+         <!-- User Account: style can be found in dropdown.less -->
+         <li class="dropdown user user-menu">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             <img src="/common/plugin/bootstrap/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+             <span class="hidden-xs">欢迎,wangjw</span>
+           </a>
+           <ul class="dropdown-menu">
+             <!-- User image -->
+             <li class="user-header">
+               <img src="/common/plugin/bootstrap/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+               <p>
+                 127.0.0.1
+                 <small>2017-6-2 11:15:53</small>
+               </p>
+             </li>
+             <!-- Menu Footer-->
+             <li class="user-footer">
+               <div class="pull-left">
+                  <a href="javascript:void(0);" class="btn btn-default btn-flat" id="editPwd">修改密码</a>
+                </div>
+               <div class="pull-right">
+                 <a href="/login/logout.do" class="btn btn-default btn-flat">退出</a>
+               </div>
+             </li>
+           </ul>
+         </li>
+       </ul>
+     </div>
+   </nav>
+ </header>
+ <script>
+	// update password
+	$(function(){
+		$("#editPwd").click(function(){
+			layer.closeAll();
+			layer.open({
+		 	  type: 2,
+		 	  title: '修改密码',
+		 	  area: ['500px', '475px'],
+		 	  content: ['/resource/toUpdatePwdPage.do', 'yes'],
+			      
+			});
+		});
+	});
+	
+ </script>
+  <!-- header end -->
+  <!-- left start -->
+  
+
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="/common/plugin/bootstrap/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>王继伟</p>
+        <a href="javascript:void(0);"><i class="fa fa-circle text-success"></i>在线</a>
+      </div>
+    </div>
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+      <li class="header">导航栏</li>
+      
+	      	<li id="user"  class="active"  >
+		        <a href="javascript:void(0)">
+		          <i class="fa fa-folder-open-o"></i> <span>PHP</span> 
+		          <i class="fa fa-angle-left pull-right"></i>
+		        </a>
+		        <ul class="treeview-menu">
+                    
+                      <li  ><a href="/resource/getList.do?productId=f67454d25a84e037015a84ff529d0001&versionId=f67454d25a84e037015a853e817b007b"><i class="fa fa-circle-o text-red"></i>1.0</a></li>
+                    
+                </ul>
+	        </li>
+      
+	      	<li id="user"  >
+		        <a href="javascript:void(0)">
+		          <i class="fa fa-folder-open-o"></i> <span>H5前端开发</span> 
+		          <i class="fa fa-angle-left pull-right"></i>
+		        </a>
+		        <ul class="treeview-menu">
+                    
+                      <li  ><a href="/resource/getList.do?productId=f67454d259977ba50159a288cf01000a&versionId=f67454d25adbe6a9015adc26102d0076"><i class="fa fa-circle-o text-red"></i>2.0</a></li>
+                    
+                      <li  ><a href="/resource/getList.do?productId=f67454d259977ba50159a288cf01000a&versionId=f67454d259977ba50159a29d1e08006f"><i class="fa fa-circle-o text-red"></i>1.0</a></li>
+                    
+                </ul>
+	        </li>
+      
+      <li id="user"  >
+       	<a href="/resource/getCommon.do">
+         	<i class="fa fa-folder-open-o"></i> <span>宣传资源</span>
+       	</a>
+      </li>
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>
+  <!-- left end -->
+  
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        	web客户端编程基础
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="javascript:void(0);"><i class="fa fa-dashboard"></i> 导航栏</a></li>
+        <li><a href="/resource/getList.do??productId=f67454d25a84e037015a84ff529d0001">PHP</a></li>
+        <li><a href="/resource/getList.do??versionId="></a></li>
+        <li><a href="javascript:void(0);">web客户端编程基础</a></li>
+      </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-body">
+	              <table id="example2" class="table table-bordered table-hover">
+	                <thead>
+		                <tr>
+		                  <th>文件名称</th>
+		                  <th>文件类型</th>
+		                  <th>文件大小</th>
+		                  <th>操作</th>
+		                </tr>
+	                </thead>
+	                <tbody>
+		                 
+			                <tr>
+			                  <td>0101P_HTML标签.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>1.52 MB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0101P_HTML标签.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0201P_CSS.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>2.18 MB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0201P_CSS.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0202P_CSS.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>1.47 MB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0202P_CSS.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0301P_CSS.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>663 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0301P_CSS.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0401R_产品列表页面.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>681 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0401R_产品列表页面.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0501R_产品列表页面.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>1.07 MB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0501R_产品列表页面.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0601P_JavaScript基础引入.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>663 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0601P_JavaScript基础引入.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0602P_JavaScript基本对象、数据类型、常量、变量.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>337 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0602P_JavaScript基本对象、数据类型、常量、变量.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0701P_JavaScript赋值、运算、比较、流程控制.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>528 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0701P_JavaScript赋值、运算、比较、流程控制.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0702P_JavaScript数组.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>551 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0702P_JavaScript数组.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0801P_JavaScript函数，对象，类，定时器.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>580 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0801P_JavaScript函数，对象，类，定时器.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0802P_字符串操作、this关键字.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>279 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0802P_字符串操作、this关键字.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>0901P_Math对象、Date对象、DOM.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>420 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\0901P_Math对象、Date对象、DOM.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1001P_DOM节点查找、事件、正则表达式.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>372 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1001P_DOM节点查找、事件、正则表达式.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1101P_事件、event对象、事件冒泡.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>282 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1101P_事件、event对象、事件冒泡.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1102P_window对象.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>299 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1102P_window对象.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1201P_window的事件、cookie、历史记录、iframe操作.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>281 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1201P_window的事件、cookie、历史记录、iframe操作.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1301P_jquery_基础.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>337 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1301P_jquery_基础.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1302P_jquery_css.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>422 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1302P_jquery_css.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1401_jquery_鼠标键盘事件.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>472 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1401_jquery_鼠标键盘事件.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1402P_jquery_轮播事件_安志月.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>441 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1402P_jquery_轮播事件_安志月.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1501P_jquery_下拉列表.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>588 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1501P_jquery_下拉列表.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1502P_css3.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>535 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1502P_css3.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+			                <tr>
+			                  <td>1601P_bootstrap.pdf</td>
+			                  <td>
+			                  		
+			                  			
+			                  			
+			                  				pdf
+			                  			
+			                  		
+			                  </td>
+			                  <td>707 KB</td>
+			                  <td> 
+			                  	
+			                  		
+			                  			<a href="/common/plugin/pdf/web/viewer.html?file=/RDMSResource\程序开发\PHP\1.0\web客户端编程基础\PPT\1601P_bootstrap.pdf" target="_blank">浏览</a>
+			                  		
+			                  		
+			                  		
+			                  		
+			                  		
+			                  </td>
+			                </tr>
+			              
+	                </tbody>
+	              </table>
+	            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <!-- footer start -->
+  
+
+<footer class="main-footer">
+  <strong>Copyright &copy; 2012-2016 北京翡翠教育科技有限公司.</strong> 版权所有.
+</footer>
+  <!-- footer end -->
+</div>
+<!-- ./wrapper -->
+<!-- page script -->
+<script>
+  $(function () {
+	  $(".downLoadArchive").on("click", function(){
+		  var filePath = $(this).attr("data-path");
+		  var fileName = $(this).attr("data-fn");
+		  if(filePath != "" && fileName != ""){
+			  location.href="/resource/downLoadArchive.do?filePath=" + filePath + "&fileName=" + fileName;
+		  }else{
+			  layer.alert('获取下载参数失败，请刷新重试！', {icon: 5});
+		  }
+	  });
+  });
+</script>
+</body>
+</html>
